@@ -1,0 +1,114 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background: #e0e0e0;
+}
+
+.restart-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background: #ff4500;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.restart-btn:hover {
+    background: #ff6347;
+}
+
+/* Icon styles */
+footer {
+    margin-top: 1rem;
+}
+
+.icon svg {
+    width: 50px;
+    height: 50px;
+    stroke: #ff4500;
+}
+
+/* Gradient Circle */
+.game-board::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.7), rgba(255, 69, 0, 0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    .restart-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .icon svg {
+        width: 40px;
+        height: 40px;
+    }
+}
